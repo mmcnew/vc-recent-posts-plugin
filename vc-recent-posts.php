@@ -42,7 +42,7 @@ function vc_recent_posts_shortcode($atts){
  );
 
 $list = '<div class="recent_posts">
-			<ul class="recent-posts">';
+			<ul>';
 
 while($q->have_posts()) : $q->the_post();
 
