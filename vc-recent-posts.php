@@ -26,8 +26,8 @@ if ( is_admin() ) {
 
 //Load CSS & Scripts
 
-add_action( 'wp_enqueue_scripts', 'gmaps_scripts', 16 );
-function gmaps_scripts() {
+add_action( 'wp_enqueue_scripts', 'rp_scripts', 16 );
+function rp_scripts() {
 
 	wp_register_style( 'rp-css', plugin_dir_url(__FILE__) . 'css/recent-posts-styles.css' );
 	wp_enqueue_style( 'rp-css' );
