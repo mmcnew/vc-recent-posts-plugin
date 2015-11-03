@@ -29,7 +29,7 @@ if ( is_admin() ) {
 add_action( 'wp_enqueue_scripts', 'rp_scripts', 17 );
 function rp_scripts() {
 
-	wp_register_style( 'rp-css', plugin_dir_url(__FILE__) . 'css/recent-posts-styles.css' );
+	wp_register_style( 'rp-css', plugin_dir_url(__FILE__) . 'css/recent-post-styles.css' );
 	wp_enqueue_style( 'rp-css' );
 
 }
@@ -38,21 +38,23 @@ function rp_scripts() {
 
 function vc_recent_posts_shortcode($atts){
  $q = new WP_Query(
-   array( 'orderby' => 'date', 'posts_per_page' => '5')
+   array( 'orderby' => 'date', 'posts_per_page' => '6')
  );
 
-$list = '<div class="recent_posts">';
+$list = '<div class="recent-posts">';
 
 while($q->have_posts()) : $q->the_post();
+	$count++;
 	$feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
-	$list .= '<div style="background:url(' . $feat_image .')"><a href="' . get_permalink() . '">' . get_the_title() . '</a><br />' . get_the_date() . '<br />' . get_the_excerpt() . '</div>';
-
+	$list .= '<div><a href="' . get_permalink() . '"><img src="' . $feat_image . '" alt="' . get_the_title() . '"/></a><h4>' . get_the_date() . '</h4></div>';
+	if ( 0 == $count%3 ) {
+        $list .= '</div><div class="recent-posts">';
+    }
 endwhile;
 
 wp_reset_query();
 
-return $list . '</ul>
-			</div>';
+return $list . '</div>';
 
 }
 
