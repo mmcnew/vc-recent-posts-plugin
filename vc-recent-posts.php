@@ -41,12 +41,11 @@ function vc_recent_posts_shortcode($atts){
    array( 'orderby' => 'date', 'posts_per_page' => '5')
  );
 
-$list = '<div class="recent_posts">
-			<ul>';
+$list = '<div class="recent_posts">';
 
 while($q->have_posts()) : $q->the_post();
-
- $list .= '<li>' . get_the_date() . '<a href="' . get_permalink() . '">' . get_the_title() . '</a>' . '<br />' . get_the_excerpt() . '</li>';
+	$feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+	$list .= '<div style="background:url($feat_image)">' . get_the_date() . '<a href="' . get_permalink() . '">' . get_the_title() . '</a>' . '<br />' . get_the_excerpt() . '</div>';
 
 endwhile;
 
