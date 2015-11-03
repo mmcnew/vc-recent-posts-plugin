@@ -45,7 +45,7 @@ $list = '<div class="recent_posts">';
 
 while($q->have_posts()) : $q->the_post();
 	$feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
-	$list .= '<div style="background:url($feat_image)"><a href="' . get_permalink() . '">' . get_the_title() . '</a><br />' . get_the_date() . '<br />' . get_the_excerpt() . '</div>';
+	$list .= '<div style="background:url(' . $feat_image .')"><a href="' . get_permalink() . '">' . get_the_title() . '</a><br />' . get_the_date() . '<br />' . get_the_excerpt() . '</div>';
 
 endwhile;
 
