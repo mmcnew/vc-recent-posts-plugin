@@ -6,7 +6,7 @@
 *    Since version 1.04
 */
 
-class VC_Plugin_Updater {
+class VC_RP_Plugin_Updater {
  
     private $slug; // plugin slug
     private $pluginData; // plugin data
