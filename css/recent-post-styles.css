@@ -1,12 +1,7 @@
 .recent-posts {
     margin:0 auto;
 }
-.recent-posts ul {
-    margin:0 auto;
-    overflow:hidden;
-    display:inline-block;
-}
-.recent-posts li {
+.recent-posts div {
     float:left;
     list-style-type:none;
     width:29%;
@@ -16,13 +11,13 @@
     overflow:hidden;
     padding:0 auto;
 }
-.recent-posts li:nth-child(3n) {
+.recent-posts div:nth-child(3n) {
     margin-right:0;
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px), (max-width: 900px) {
     
-    .recent-posts li {
+    .recent-posts div {
         float:none;
         width:100%;
         margin: 0px auto 10px;
