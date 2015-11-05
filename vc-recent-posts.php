@@ -46,7 +46,7 @@ $list = '<div class="recent-posts">';
 while($q->have_posts()) : $q->the_post();
 	$count++;
 	$feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
-	$list .= '<div><a href="' . get_permalink() . '"><img src="' . $feat_image . '" alt="' . get_the_title() . '"/></a><p class="date">' . get_the_date() . '</p></div>';
+	$list .= '<div><a href="' . get_permalink() . '"><img src="' . $feat_image . '" alt="' . get_the_title() . '"/><p class="date">' . get_the_date() . '</p></a></div>';
 	if ( 0 == $count%3 ) {
         $list .= '</div><div class="recent-posts">';
     }
