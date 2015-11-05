@@ -36,6 +36,7 @@ a.more {
     box-shadow: none;
     border: none;
     transition: all .3s;
+    text-shadow: none;
 }
 
 a.more:hover {
