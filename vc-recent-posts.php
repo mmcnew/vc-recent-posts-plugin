@@ -3,7 +3,7 @@
   Plugin Name: VC Recent Posts Shortcode
   Plugin URI: http://www.visceralconcepts.com
   Description: A shortcode to add a stylized list of recent posts to any place on your site.
-  Version: 1.0
+  Version: 1.01
   Author: Visceral Concepts
   Author URI: http://www.visceralconcepts.com
   License: GPLv3 or Later

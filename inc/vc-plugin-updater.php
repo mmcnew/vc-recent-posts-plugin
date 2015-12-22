@@ -2,8 +2,8 @@
 
 /*
 *    Update Plugin
-*    @package VC Site Maintenance Plugin
-*    Since version 1.04
+*    @package VC Recent Posts Plugin
+*    Since version 1.0
 */
 
 class VC_RP_Plugin_Updater {
