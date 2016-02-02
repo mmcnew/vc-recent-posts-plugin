@@ -1,8 +1,17 @@
-.recent-posts {
+#recent-posts .recent-posts {
     margin:0 auto;
 }
 
-.recent-posts div {
+#recent-posts .recent-posts:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* = Grid Layout
+-------------------------------------*/
+
+#recent-posts .recent-posts.grid div {
     float:left;
     list-style-type:none;
     width:29%;
@@ -14,11 +23,11 @@
     padding:15px;
 }
 
-.recent-posts div:nth-child(3n) {
+#recent-posts .recent-posts.grid div:nth-child(3n) {
     margin-right:0;
 }
 
-.recent-posts div p {
+#recent-posts .recent-posts.grid div p {
     position:relative;
     float:right;
     top: -1.5em;
@@ -29,7 +38,7 @@
     color: rgb(255,255,255);
 }
 
-a.more {
+#recent-posts a.more {
     display: inline-flex;
     background-color: rgb(67,182,73);
     color: rgb(255,255,255);
@@ -39,17 +48,60 @@ a.more {
     text-shadow: none;
 }
 
-a.more:hover {
+#recent-posts a.more:hover {
     box-shadow: 0px 0px 5px #333;
     transition: all .3s;
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px), (max-width: 900px) {
     
-    .recent-posts div {
+    #recent-posts .recent-posts.grid div {
         float:none;
         width:100%;
         margin: 0px auto 10px;
     }
     
 }
+
+/* = List Layout
+-------------------------------------*/
+
+#recent-posts .recent-posts.list div {
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+#recent-posts .recent-posts.list div.bborder {
+    background-color: #fff;
+    box-shadow: 0px 12px 30px -30px
+}
+
+#recent-posts .recent-posts.list div a {
+    color: #555;
+}
+
+#recent-posts .recent-posts.list div a:hover {
+    text-decoration: underline;
+}
+
+#recent-posts .recent-posts.list div a h3 {
+    padding: 35px 25px;
+    background-color: rgba(255,255,255,.75);
+    height: 100%;
+    width: 100%;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#recent-posts .recent-posts.list div a .date {
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    top: 0;
+    padding: 5px 10px;
+}
+
+
