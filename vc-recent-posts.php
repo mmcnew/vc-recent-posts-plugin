@@ -3,7 +3,7 @@
   Plugin Name: VC Recent Posts Shortcode
   Plugin URI: http://www.visceralconcepts.com
   Description: A shortcode to add a stylized list of recent posts to any place on your site.
-  Version: 1.03
+  Version: 1.04
   Author: Visceral Concepts
   Author URI: http://www.visceralconcepts.com
   License: GPLv3 or Later
@@ -46,6 +46,7 @@ function vc_recent_posts_shortcode($atts){
 		'title' => 'true',
 		'excerpt' => 'false',
 		'date' => 'false',
+		'time' => 'true',
 		'link' => 'true',
 		'feat-bg' => 'true',
 		'posts-per-page' => '6',
@@ -69,6 +70,15 @@ function vc_recent_posts_shortcode($atts){
 		$link = get_permalink();
 		$title = get_the_title();
 		$date = get_the_date();
+		$post = get_post();
+		$words = str_word_count( strip_tags( $post->post_content ) );
+		$minutes = floor( $words / 200 );
+		$seconds = floor( $words % 200 / ( 200 / 60 ) );
+		if ( 1 <= $minutes ) {
+			$estimated_time = $minutes . ' minute read';
+		} else {
+			$estimated_time = 'Super quick read';
+		}
 		
 		$list .= '<div class="post';
 		if ( $a['image'] == 'false' && $a['feat-bg'] == 'false' ) {
@@ -102,6 +112,9 @@ function vc_recent_posts_shortcode($atts){
 		}
 		if ( $a['date'] != 'false' ) {
 			$list .= '<p class="date">' . $date . '</p>';
+		}
+		if ( $a['date'] == 'false' && $a['time'] != 'false' ) {
+			$list .= '<p class="date">' . $estimated_time . '</p>';
 		}
 		if ( $a['link'] != 'false' ) {
 			$list .= '</a>';
