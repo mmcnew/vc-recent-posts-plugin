@@ -99,7 +99,7 @@ function vc_recent_posts_shortcode($atts){
 			$list .= '</a>';
 		}
 		if ( $a['link'] != 'false' && $a['image'] != 'false' ) {
-			$list .= '<a href="' . $link . '">';
+			$list .= '<a href="' . $link . '" class="img-link">';
 		}
 		if ( $a['image'] != 'false' && $a['feat-bg'] != 'true' ) {
 			$list .= '<img src="' . $feat_image . '" alt="' . $title . '"/>';
@@ -108,13 +108,13 @@ function vc_recent_posts_shortcode($atts){
 			$list .= '</a>';
 		}
 		if ( $a['link'] != 'false' && $a['date'] !== 'false' ) {
-			$list .= '<a href="' . $link . '">';
+			$list .= '<a href="' . $link . '" class="date-link">';
 		}
 		if ( $a['date'] != 'false' ) {
 			$list .= '<p class="date">' . $date . '</p>';
 		}
 		if ( $a['link'] != 'false' && $a['time'] !== 'false' ) {
-			$list .= '<a href="' . $link . '">';
+			$list .= '<a href="' . $link . '" class="date-link">';
 		}
 		if ( $a['date'] == 'false' && $a['time'] != 'false' ) {
 			$list .= '<p class="date">' . $estimated_time . '</p>';

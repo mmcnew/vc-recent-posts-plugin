@@ -70,11 +70,14 @@
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    width: 100%;
+    height: auto;
+    text-align: left;
 }
 
-#recent-posts .recent-posts.list div.bborder {
+#recent-posts .recent-posts.list div.post.bborder {
     background-color: #fff;
-    box-shadow: 0px 12px 30px -30px
+    box-shadow: 0px 12px 30px -30px #333333;
 }
 
 #recent-posts .recent-posts.list div.bborder:last-of-type {
@@ -93,18 +96,21 @@
     padding: 35px 25px;
     background-color: rgba(255,255,255,.75);
     height: 100%;
-    width: 100%;
     text-align: left;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    position: relative;
+    margin-right: 10px;
 }
 
-#recent-posts .recent-posts.list div a .date {
+#recent-posts .recent-posts.list div a.date-link {
     position: absolute;
-    z-index: 2;
-    right: 0;
-    top: 0;
+    width: auto;
+    display: inline-block;
+    height: auto;
+    top: 40%;
+    right: 0px;
     padding: 5px 10px;
 }
 
