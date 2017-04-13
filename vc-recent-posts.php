@@ -140,7 +140,7 @@ function vc_recent_posts_shortcode($atts){
 	
 	wp_reset_query();
 	
-	return $list . '</div> ' . '<a href="' . get_permalink( get_option( 'page_for_posts' ) ) . '" class="button more">View More</a></div>';
+	return $list . '</div> ' . '<a href="' . get_permalink( get_option( 'page_for_posts' ) ) . '" class="button more btn-normal">View More</a></div>';
 
 }
 
