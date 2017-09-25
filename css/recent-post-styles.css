@@ -92,7 +92,7 @@
     text-decoration: underline;
 }
 
-#recent-posts .recent-posts.list div a h3 {
+#recent-posts .recent-posts.list div a h4 {
     padding: 35px 25px;
     background-color: rgba(255,255,255,.75);
     height: 100%;
